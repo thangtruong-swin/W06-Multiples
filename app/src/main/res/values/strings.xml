@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">W06-Multiples-Solutions</string>
+    <string name="multiply">multiply!</string>
+    <string name="time">x</string>
+    <string name="factor1">_</string>
+    <string name="factor2">Please enter a value</string>
+</resources>
