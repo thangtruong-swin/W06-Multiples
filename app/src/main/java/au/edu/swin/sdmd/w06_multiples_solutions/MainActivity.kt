@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         tvFactor2.text = factor2.toString()
 
         val multiply = findViewById<Button>(R.id.multiply)
-        multiply.setOnClickListener {
+        /*multiply.setOnClickListener {
             val factor1 = tvFactor1.text.toString().toInt()
             val factor2 = tvFactor2.text.toString().toInt()
             if(factor1 in 1..13){
@@ -34,6 +34,22 @@ class MainActivity : AppCompatActivity() {
                     putExtra("result", Result(factor1 * factor2))
                 }
                 startActivity(i)
+            }
+            else{
+                tvFactor1.error = "Please enter between 1 to 13"
+            }
+
+
+        }*/
+        multiply.setOnClickListener {
+            val factor1 = tvFactor1.text.toString().toInt()
+            val factor2 = tvFactor2.text.toString().toInt()
+            if(factor1 in 1..13){
+               val fragment = ResultFragment.newInstance(factor1 * factor2)
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.result_container, fragment)
+                    .commit()
             }
             else{
                 tvFactor1.error = "Please enter between 1 to 13"
