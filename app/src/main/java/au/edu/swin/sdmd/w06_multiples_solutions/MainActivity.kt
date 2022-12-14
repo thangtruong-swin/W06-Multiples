@@ -15,18 +15,23 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 //        val factor1 = Random.nextInt(from = 1, until = 13)
-        val factor2  = Random.nextInt(from = 1, until = 13)
+//        val factor2  = Random.nextInt(from = 1, until = 13)
         val tvFactorLayout = findViewById<TextInputLayout>(R.id.tilFactor1)
         val tvFactor1 = findViewById<TextInputEditText>(R.id.factor1)
+
 //        val tvFactor1 = findViewById<TextView>(R.id.factor1)
-        val tvFactor2 = findViewById<TextView>(R.id.factor2)
+//        val tvFactor2 = findViewById<TextView>(R.id.factor2)
+
+        val tvFactorLayout2 = findViewById<TextInputLayout>(R.id.tilFactor2)
+        val tvFactor2 = findViewById<TextInputEditText>(R.id.factor2)
+
 
 //        tvFactor1.text = findViewById<TextInputEditText>(R.id.factor1)
 //        tvFactor1.text = factor1.toString()
-        tvFactor2.text = factor2.toString()
+//        tvFactor2.text = factor2.toString()
 
         val multiply = findViewById<Button>(R.id.multiply)
-        /*multiply.setOnClickListener {
+        multiply.setOnClickListener {
             val factor1 = tvFactor1.text.toString().toInt()
             val factor2 = tvFactor2.text.toString().toInt()
             if(factor1 in 1..13){
@@ -40,22 +45,30 @@ class MainActivity : AppCompatActivity() {
             }
 
 
-        }*/
-        multiply.setOnClickListener {
+        }
+      /*  multiply.setOnClickListener {
             val factor1 = tvFactor1.text.toString().toInt()
             val factor2 = tvFactor2.text.toString().toInt()
-            if(factor1 in 1..13){
+//            if(factor1 in 1..13===false){
+//                tvFactor1.error = "Please enter between 1 to 13"
+//            }
+//            if(factor2 in 1..13===false){
+//                tvFactor2.error = "Please enter between 1 to 13"
+//            }
+
+            if((factor1 in 1..13) && (factor2 in 1..13)){
                val fragment = ResultFragment.newInstance(factor1 * factor2)
                 supportFragmentManager
                     .beginTransaction()
                     .replace(R.id.result_container, fragment)
                     .commit()
             }
-            else{
+            else if (factor1 in 1..13===false){
                 tvFactor1.error = "Please enter between 1 to 13"
             }
-
-
-        }
+            else {
+                tvFactor2.error = "Please enter between 1 to 13"
+            }
+        }*/
     }
 }
